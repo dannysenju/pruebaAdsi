@@ -1,0 +1,69 @@
+dentro de wildfly entrar a la carpeta bin, y correr el archivo con extension .bat; add-user.bat.
+
+luego crear un usuario admin con contraseña admin, y darle yes en en todos los pasos que aparecen.
+
+logearse en la ruta localhost:9990
+
+Carpeta a crear:
+dentro de wildfly , se va a la carpeta modules, y se crea la siguiente ruta(carpetas)
+
+\com\mysql\driver\main
+
+dentro de la carpeta main, se pega el jar de conexión de mysql 
+mysql-connector-java-5.1.7-bin.jar
+
+y se crea el archivo module.xml
+
+module.xml:
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module xmlns="urn:jboss:module:1.1" name="com.mysql.driver">
+
+	<resources>
+		<resource-root path="mysql-connector-java-5.1.7-bin.jar"/>
+	</resources>
+
+	<dependencies>
+		<module name="javax.api"/>
+		<module name="javax.transaction.api"/>
+	</dependencies>	
+</module>
+
+verificar que la variable de entorno de java este creada correctamente.
+
+se entra a la carpeta bin, y se ejecuta jboss-cli.bat
+
+luego en el promt ejecutar:
+
+connect
+
+
+
+
+
+
+luego codigo servidor
+
+module add --name=com.mysql  --dependencies=javax.api,javax.transaction.api --resources=
+/media/danny/datos/Sena/SenaSoft/wildfly-10.1.0.Final/modules/com/mysql/driver/main/mysql-connector-java-5.1.44.jar
+
+E:\entornoWeb\wildfly-10.1.0.Final\modules\com\mysql\driver\main\
+Segundo codigo servidor
+
+ [standalone@localhost:9990 /] :reload
+
+/subsystem=datasources/jdbc-driver=com.mysql:add(driver-name=com.mysql,driver-module-name=com.mysql,driver-xa-datasource-class-name=com.mysql.jdbc.jdbc2.optional.MysqlXADataSource)
+
+reiniciar servidor 
+
+entrar de nuevo a la consola de wildfly en http://127.0.0.1:9990/
+
+y agregar un nuevo datasource,
+
+detectar automaticamente el driver de mysql, 
+
+y recordar colocar initial pool 1 a  max pool 15
+
+reiniciar servidor
+

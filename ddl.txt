@@ -1,0 +1,12 @@
+CREATE TABLE `documento` (
+  `iddocumento` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  `comentario` varchar(800) DEFAULT NULL,
+  `fecha_creacion` date NOT NULL,
+  `tipo_archivo` varchar(10) DEFAULT NULL,
+  `peso` int(20) DEFAULT NULL,
+  `archivo` longblob,
+  `estado` int(1) NOT NULL,
+  `fecha_actualizacion` date NOT NULL,
+  PRIMARY KEY (`iddocumento`)
+) ;
