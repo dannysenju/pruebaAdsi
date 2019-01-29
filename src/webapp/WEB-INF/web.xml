@@ -21,7 +21,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>/myTest/*</url-pattern>
+        <url-pattern>/pruebaAdsi/*</url-pattern>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
     
@@ -32,7 +32,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>myTest/index.html</welcome-file>
+        <welcome-file>pruebaAdsi/index.html</welcome-file>
     </welcome-file-list>
     <mime-mapping>
         <extension>eot</extension>

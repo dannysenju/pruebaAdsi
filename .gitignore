@@ -6,3 +6,5 @@ nbproject
 build.xml
 nbproject/
 pom.xml.2
+/build/
+/dist/
