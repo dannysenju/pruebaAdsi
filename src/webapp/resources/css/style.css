@@ -300,7 +300,7 @@ header .inner {
 }
 .logo a {
     position:relative;
-    background: url(../images/logo.png) no-repeat 0 0;
+    background: url('/pruebaAdsi/resources/images/logo.png')no-repeat 0 0;
     height: 142px;
     width: 414px;
     overflow:hidden;
