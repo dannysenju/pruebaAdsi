@@ -5,9 +5,11 @@
  */
 package service;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import model.Documento;
 
 /**
@@ -21,7 +23,24 @@ public class DocumentoEJB {
     private EntityManager em; // pone a disposicion JPA
     
     public Documento getDocumentById(int id) {
-        return (Documento) em.createNamedQuery("Usuario.findByIddocumento", Documento.class).setParameter("iddocumento", id).getSingleResult();
+        return (Documento) em.createNamedQuery("Documento.findByIddocumento", Documento.class).setParameter("iddocumento", id).getSingleResult();
+    }
+    
+    public int save(Documento doc){
+        em.persist(doc);
+        em.flush();
+        return doc.getIddocumento();
+    }
+    
+    public boolean updateImage(byte[] archivo, int id) {
+        Query q = em.createQuery("Update Documento d SET d.archivo = :archivo WHERE d.iddocumento = :id")
+                .setParameter("archivo", archivo)
+                .setParameter("id", id);
+        return q.executeUpdate() > 0;
+    }
+    
+    public List<Documento> listAll(){
+        return em.createNamedQuery("Documento.findAll").getResultList();
     }
     
 }

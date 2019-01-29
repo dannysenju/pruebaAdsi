@@ -27,7 +27,7 @@
                 <ul class="sf-menu">
                     <li class="current"><a href="index.html">LISTA ARCHIVOS</a></li>
                     <li >
-                        <a href="form.html">SUBIR ARCHIVO</a>
+                        <a href="form.xhtml">SUBIR ARCHIVO</a>
                     </li>
 
                 </ul>
@@ -52,7 +52,35 @@
 
                             <div class='content-aprendiz' id='content-aprendiz' >
 
+                                <h:form>
+                                    <p:dataTable var="docum" value="#{documentoBean.documentos}" widgetVar="carsTable"
+                                                 emptyMessage="No hay documentos disponibles" 
+                                                 filteredValue="#{documentoBean.documentosFilter}">
 
+                                        <f:facet name="header">
+                                            <p:outputPanel>
+                                                <h:outputText value="Search all fields:" />
+                                                <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
+                                            </p:outputPanel>
+                                        </f:facet>
+
+                                        <p:column filterBy="#{docum.nombre}" headerText="Nombre" filterMatchMode="contains">
+                                            <h:outputText value="#{docum.nombre}" />
+                                        </p:column>
+                                        <p:column filterBy="#{docum.comentario}" headerText="comentario" filterMatchMode="contains">
+                                            <h:outputText value="#{docum.comentario}" />
+                                        </p:column>
+                                        <p:column filterBy="#{docum.peso}" headerText="peso"  filterMatchMode="contains">
+                                            <h:outputText value="#{docum.peso} KB" />
+                                        </p:column>
+                                        <p:column filterBy="#{docum.tipoArchivo}" headerText="Tipo" filterMatchMode="contains">
+                                            <h:outputText value="#{docum.tipoArchivo}" />
+                                        </p:column>
+                                        
+
+                                        
+                                    </p:dataTable>
+                                </h:form>
 
                             </div>                            
 
@@ -109,9 +137,9 @@
                     <strong class="sena-logo">SENA de Clase Mundial</strong>
                 </div>
                 <ul class="social-list">
-<!--                    <li><a href="#"><img src="images/social-link-1.jpg" alt=""></img></a></li>
-                    <li><a href="#"><img src="images/social-link-2.jpg" alt=""></a></li>
-                    <li><a href="#"><img src="images/social-link-3.jpg" alt=""></a></li>-->
+                    <!--                    <li><a href="#"><img src="images/social-link-1.jpg" alt=""></img></a></li>
+                                        <li><a href="#"><img src="images/social-link-2.jpg" alt=""></a></li>
+                                        <li><a href="#"><img src="images/social-link-3.jpg" alt=""></a></li>-->
                 </ul>
             </footer>
         </div>

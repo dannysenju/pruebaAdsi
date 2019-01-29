@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300");
+/*  Variales  
+colores de la aplicación
+*/
+/*  Variales  
+colores de la aplicación
+*/
+body {
+    font-family: 'RobotoDraft', 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+}
+/* ESTILOS DEL TITULO DE LOGIN*/
+.login-title {
+    padding-top: 60px;
+    text-align: center;
+    letter-spacing: 4px; 
+}
+.login-title h1 {
+    margin: 0;
+    font-size: 48px;
+    color: #3C9914;
+    font-weight: bold; 
+}
+.login-title span {
+    font-size: 12px;
+    font-weight: 300;
+    color: #495057;
+}
+/*CARD DE LOGIN, INPUTS Y BOTONES*/
+.card-login {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    height: 100%;
+    padding-top: 10px;
+    max-width: 280px;
+    border-top: 5px solid #74D14C;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); 
+}
+
+.card-login h2 {
+    color: #74D14C;
+    line-height: 2;
+    text-align: center; 
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.card-login input {
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    font-weight: 400 !important;
+    outline: none;
+    display: block;
+    width: 250px;
+    box-shadow: none;
+    padding: 7px 0 0px 15px;
+    margin-left: 15px;
+    box-sizing: border-box;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    border-radius: 0;
+    margin-bottom: 15px;
+}
+
+.card-login input:focus {
+    border-bottom: 1px solid #74D14C;
+    box-shadow: none !important;
+}
+
+.card-login button {
+    cursor: pointer;
+    background: #93E372;
+    width: 250px;
+    border: 0;
+    border-radius: 0px;
+    padding: 2px;
+    color: #fff;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    margin: 5px 0 25px 15px;
+    text-shadow: none;
+}
+
+.card-login button:hover {
+    background: #57BD2C;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    
+}
+/*CARD DE OLVIDO CONTRASEÑA*/
+.card-login .card-forgot {
+    background: #B8EFA0;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    color: #666666;
+    text-align: center; 
+}
+
+.card-login .card-forgot:hover {
+    background: #74D14C;
+}
+.card-login .card-forgot a {
+    color: #000;
+    text-decoration: none; 
+}
+
+.card-login .card-forgot a:hover {
+    border-bottom: 1px solid #000;
+}
+
+/*ANIMACION DE LA IMAGEN DEL TITULO*/
+.animated-title-img {
+    animation: rubberBand 5s normal infinite; 
+    width: 10rem !important;
+}
+
+.animated-title {
+    animation: tada 2s linear 4;
+}
+ /*PIE DE PAGINA DERECHOS RESERVADOS*/
+.div-footer {
+    position: fixed;
+    bottom: 0;
+    width:100%; 
+    font:italic bold 10px arial,sans-serif; 
+    font-size: 11px !important;
+    text-align:center;
+}
