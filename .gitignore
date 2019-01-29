@@ -2,5 +2,7 @@ target/
 .classpath
 .project
 .settings/
-nb-configuration.xml
+nbproject
+build.xml
+nbproject/
 pom.xml.2
